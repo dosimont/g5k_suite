@@ -36,6 +36,7 @@ echo "define library path"
 echo "/usr/local/lib" >> /etc/ld.so.conf
 ldconfig
 fi
+apt-get update
 apt-get install libotf-trace-dev
 apt-get install zlib1g-dev
 apt-get install libbfd-dev
