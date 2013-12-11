@@ -6,6 +6,6 @@ SSH="root@$NODE"
 SCP="$SSH:~"
 echo "copying files to $SSH"
 scp -r ../mpi_tools $SCP
-scp config.sh $SCP
-scp .bashrc $SCP
+scp xp_*.sh $SCP
+scp bashrc $SCP/.bashrc
 
