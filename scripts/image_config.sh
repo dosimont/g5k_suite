@@ -20,7 +20,7 @@ cd akypuera/build &&
 cmake -DOTF2=ON -DOTF2_PATH=/opt/scorep/ .. &&
 make &&
 make install &&
-cd ../.. &&
+cd ../..
 }
 
 cd mpi_tools &&
@@ -42,8 +42,8 @@ apt-get install zlib1g-dev &&
 apt-get install libbfd-dev &&
 apt-get install gfortran &&
 apt-get install cmake &&
-tarins openmpi-1.6.5 &&
-tarins scorep-1.0.2 &&
-aky &&
+tarins openmpi-1.6.5
+tarins scorep-1.0.2
+aky
 
 
