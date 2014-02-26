@@ -55,8 +55,12 @@ mkdir ~mpi/.ssh
 cp ~/.ssh/authorized_keys ~mpi/.ssh
 chown -R mpi ~mpi/.ssh
 su -c 'ssh-keygen -N "" -P "" -f /var/mpi/.ssh/id_rsa && cat .ssh/id_rsa.pub >> ~/.ssh/authorized_keys && echo "        StrictHostKeyChecking no" >> ~/.ssh/config' - mpi
-cp -r * ~mpi/*
-chown -R ~mpi/*
+cp -r mpi_tools ~mpi/
+cp .bashrc ~mpi/
+mkdir ~mpi/bin
+mkdir ~mpi/scripts
+cp mvbin.sh ~mpi/scripts/
+chown -R mpi ~mpi/*
 tgz-g5k /dev/shm/image.tgz
 
 
