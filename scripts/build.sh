@@ -23,6 +23,17 @@ make install &&
 cd ../..
 }
 
+function poti
+{
+cd poti &&
+mkdir -p build &&
+cd build &&
+cmake .. &&
+make &&
+make install &&
+cd ../..
+}
+
 cd mpi_tools &&
 for i in `ls *tar.gz`
 do
@@ -45,6 +56,7 @@ apt-get install cmake &&
 tarins openmpi-1.6.5
 tarins scorep-1.0.2
 aky
+poti
 
 cd ..
 
