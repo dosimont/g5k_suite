@@ -11,4 +11,4 @@ shift
 fi
 R=$1
 
-oarsub -I -l nodes=$NODES,walltime=$H:$M -r "$1" -t deploy
+oarsub -l nodes=$NODES,walltime=$H:$M -r "$1" -t deploy
