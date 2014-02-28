@@ -33,7 +33,6 @@ make &&
 make install &&
 cd ../..
 }
-
 cd mpi_tools &&
 for i in `ls *tar.gz`
 do
@@ -57,22 +56,11 @@ tarins openmpi-1.6.5
 tarins scorep-1.0.2
 aky
 poti
+cp /usr/local/lib/libpoti.so.4.2 /usr/local/lib/libpoti.so.2
+
 
 cd ..
 
-useradd -m -g rdma mpi -d /var/mpi
-echo "* hard memlock unlimited" >> /etc/security/limits.conf
-echo "* soft memlock unlimited" >> /etc/security/limits.conf
-mkdir ~mpi/.ssh
-cp ~/.ssh/authorized_keys ~mpi/.ssh
-chown -R mpi ~mpi/.ssh
-su -c 'ssh-keygen -N "" -P "" -f /var/mpi/.ssh/id_rsa && cat .ssh/id_rsa.pub >> ~/.ssh/authorized_keys && echo "        StrictHostKeyChecking no" >> ~/.ssh/config' - mpi
-cp -r mpi_tools ~mpi/
-cp .bashrc ~mpi/
-mkdir ~mpi/bin
-mkdir ~mpi/scripts
-cp mvbin.sh ~mpi/scripts/
-chown -R mpi ~mpi/*
-tgz-g5k /dev/shm/image.tgz
+tgz-g5k image.tgz
 
 
