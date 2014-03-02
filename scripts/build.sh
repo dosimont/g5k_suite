@@ -3,7 +3,8 @@
 function inst
 {
 ./configure &&
-make all install
+make -j8 all &&
+make install
 }
 
 function tarins
@@ -39,8 +40,11 @@ function pajeng
 cd pajeng &&
 mkdir -p build &&
 cd build &&
-cmake .. &&
-make &&
+cmake -DPAJENG=OFF \
+      -DPJ_DUMP=ON \
+      -DPJ_VALIDATE=ON \
+      -DPAJE_UTILS_LIBRARY=OFF \
+      -DPAJE_LIBRARY=ON .. &&
 make install &&
 cd ../..
 }
