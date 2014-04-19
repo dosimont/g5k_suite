@@ -19,7 +19,8 @@
 export PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/opt/scorep/bin
 export LD_LIBRARY_PATH=/usr/local/lib/
 export OAR_FILE_NODES=~/nodes
+export SCOREP_FILTERING_FILE=~/scorep.filt
 
-alias mpiex="time mpirun --machinefile $OAR_FILE_NODES -x SCOREP_ENABLE_PROFILING=false -x SCOREP_ENABLE_TRACING=true -x SCOREP_EXPERIMENT_DIRECTORY=$DIR -x SCOREP_OVERWRITE_EXPERIMENT_DIRECTORY=true"
+alias mpiex="time mpirun --bind-to-core --machinefile $OAR_FILE_NODES -x SCOREP_ENABLE_PROFILING=false -x SCOREP_ENABLE_TRACING=true -x SCOREP_EXPERIMENT_DIRECTORY=$DIR -x SCOREP_OVERWRITE_EXPERIMENT_DIRECTORY=true"
 alias trace=/home/ddosimont/g5k_suite/scripts/trace.sh
 alias lucas="otf22paje traces.otf > traces.paje"
