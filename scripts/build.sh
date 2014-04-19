@@ -100,6 +100,7 @@ tarins $SCOREP --prefix=/opt/scorep --with-opari2=/opt/opari2 --with-cube=/opt/c
 rm -fr $OPENMPI $OPARI2 $CUBE4 $SCOREP
 if [ ! $G5K ]
 then
+cd ../mpi_tools2
 aky
 poti
 cp /usr/local/lib/libpoti.so.4.2 /usr/local/lib/libpoti.so.2
